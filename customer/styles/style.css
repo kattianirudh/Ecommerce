@@ -1,0 +1,396 @@
+body
+{
+	font-family: "roboto",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #333333;
+	/* background-color: #f0f0f0; */
+	overflow-x: hidden;
+}
+#top
+{
+	background: #555555;
+	padding: 10px 0;
+}
+
+#top .offer
+{
+	text-transform:uppercase;
+	color:#fff;
+}
+#top .offer .btn {
+
+text-transform: uppercase;
+
+}
+
+@media (max-width: 991px) {
+
+#top .offer {
+margin-bottom: 10px;
+}
+
+}
+
+@media (max-width: 991px) {
+
+#top {
+font-size: 12px;
+text-align: center;
+}
+
+}
+#top a {
+
+color: #fff;
+
+}
+
+#top ul.menu {
+
+padding-top: 5px;
+
+margin: 0;
+text-align: right;
+font-size: 12px;
+list-style: none;
+
+}
+@media (max-width: 991px) {
+
+#top ul.menu {
+text-align: center;
+}
+
+}
+
+#top ul.menu > li {
+
+display: inline-block;
+
+}
+
+#top ul.menu > li a {
+
+color: #eeeeee;
+
+}
+
+#top ul.menu > li + li:before {
+content: "|\00a0"; 
+padding: 0 5px;
+color: #f7f7f7;
+
+}
+
+/* Header Styles */
+
+.navbar {
+background:white;
+
+}
+
+.navbar-collapse .right {
+float:right;
+}
+
+.navbar-brand {
+float:left;
+padding: 10px 15px;
+font-size:12px;
+line-height:20px;
+height:65px;
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus{
+text-decoration:none;
+}
+
+.navbar ul.nav > li > a {
+text-transform:uppercase;
+/*font-weight:bold;*/
+font-size:14px;
+
+}
+
+.padding-nav{
+padding-top:10px;
+}
+
+.navbar ul.nav > li > a:hover{
+background:#e7e7e7;
+}
+
+.btn-primary{
+color:rgb(255, 255, 255);
+background-color:rgb(79, 191, 168);
+border-color:rgb(65, 179, 156);
+}
+#search .navbar-form{
+float:right;
+}
+
+#search {
+
+clear: both;
+border-top: solid 1px #9adacd;
+text-align:right;
+
+}
+
+#search .navbar-form .input-group {
+display:table;
+
+}
+
+#search .navbar-form .input-group .form-control {
+width:100%;
+
+}
+/* Slider Styles  */
+
+#slider 
+{
+	margin-bottom:40px;
+}
+#slider .col-md-10
+{
+	 margin-left:10%; 
+}
+.navbar-header .navbar-brand > img
+{
+	width: 70%;
+}
+.strip-padding > img
+{
+	width: 100%;
+}
+.strip-padding
+{
+	width: 70%;
+	margin: auto;
+}
+.row .col-md-3 > img
+{
+	width: 100%;
+}
+.space
+{
+	margin-left: 1%;
+	margin-right: 1%;
+}
+/* ---------------------Footer Styles---------------------- */
+#footer
+{
+	background: rgb(236, 244, 213);
+}
+.row a
+{
+	color:#696B79;
+}
+.footer-padding
+{
+	padding-top: 2%;
+}
+.row ul
+{
+	list-style-type: none;
+}
+.airtel >img
+{
+	width: 100%;
+	margin: auto;
+}
+.myntra >img
+{
+	width: 100%;
+	margin: auto;
+}
+.myntra 
+{
+	padding: 3%;
+}
+
+/*-------------------Card Design---------------------------- */
+.product{
+	display: inline-block;
+	float: left;
+	 padding: 10px 10px 20px 10px; 
+}
+.card
+{
+	border:1px solid rgba(0,0,0,.125);
+}
+
+.card_brand{
+	font-family: 'Roboto', sans-serif;
+	font-size: 9pt;
+	font-weight: 900;
+	 display: inline; 
+	/*padding-right: 20px;*/
+	float: left;
+	display: block;width: 50%;
+	height: 100%;
+	border-right: 1px solid #9e9e9e66;
+}
+
+.card_price{
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 9pt;
+	 display: inline; 
+	float:right;
+	width: 50%;	
+	
+}
+
+.add_cart{
+	font-family: 'Roboto', sans-serif;
+	font-size: 9pt;
+	font-weight: 900;
+	min-width: 100%; */
+	padding-top: 5px;
+	min-height: 30px; */
+	padding-left: 15px;
+	color: rgba(0,0,0,0.6);
+	background-color: #0098ff;
+	margin-top: 0.5em;
+	display: block;
+	height: 100%;
+	/* background: -moz-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 29%, rgba(5,193,255,1) 30%, rgba(5,193,255,1) 100%); ff3.6+
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(29%, rgba(255,255,255,1)), color-stop(30%, rgba(5,193,255,1)), color-stop(100%, rgba(5,193,255,1))); safari4+,chrome
+	background: -webkit-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 29%, rgba(5,193,255,1) 30%, rgba(5,193,255,1) 100%); safari5.1+,chrome10+
+	background: -o-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 29%, rgba(5,193,255,1) 30%, rgba(5,193,255,1) 100%); opera 11.10+
+	background: -ms-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 29%, rgba(5,193,255,1) 30%, rgba(5,193,255,1) 100%); ie10+
+	background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 29%, rgba(5,193,255,1) 30%, rgba(5,193,255,1) 100%); w3c
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#05C1FF', endColorstr='#FFFFFF',GradientType=1 ); ie6-9 */
+}
+
+.card-body{
+	padding: 0;
+	text-align: center;
+	display: block;
+}
+.row-sizing
+{
+	max-width: 76%;
+	float: right;
+}
+.one-line
+{
+	height: 2em;
+	margin-top: 1em;
+}
+ 
+ .add_cart p
+ {
+ 	padding-top :6px;
+ 	margin-bottom: 0px!important; 
+ }
+
+ @media(max-width: 768px)
+ {
+ 	.center-responsive
+ 	{
+ 		width: 70%;
+ 		margin: 0 auto
+ 	}
+ 	.row
+ 	{
+ 		width: 100%;
+ 	}
+ }
+ .row a
+ {
+ 	text-decoration: none;
+ }
+
+ .images{
+ 	height: 90%;
+ }
+
+ .prod_img{
+	min-width: 480px;
+	height: auto;
+}
+
+.prd_dsc{
+	padding-left: 50px;
+}
+
+.prod_title{
+	font-family: 'Roboto', sans-serif;
+	font-size: 13pt;
+	font-weight: 900;
+	color: rgba(0,0,0,0.6);
+	padding-bottom: 20px;
+}
+
+.prod_price{
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 12pt;
+	font-weight: 600;
+}
+
+.prod_size, .prod_detail_head, .prod_qnty{
+	font-family: 'Roboto', sans-serif;
+	font-size: 11pt;
+	font-weight: bold;
+	color: rgba(0,0,0,0.7);
+	padding-bottom: 20px;
+}
+
+.add_bag_inner{
+	padding:10px 50px 10px 50px;
+	font-family: 'Roboto', sans-serif;
+	letter-spacing: 1px;
+	font-size: 10pt;
+}
+.btn{
+	cursor: pointer;
+}
+
+.rad_but{
+	background-color: yellow;
+
+}
+
+.prod_detail{
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 11pt;
+	color: rgba(0,0,0,0.8);
+}
+
+.extra_info{
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 8pt;
+	color: rgba(0,0,0,0.5);
+}
+
+.quantity
+{
+	margin:10px;
+}
+.itemquantity
+{
+	margin-bottom: 4%;
+}
+.item-buy
+{
+	margin-top: 35px;
+}
+.quantity
+{
+	height: 40px;
+	max-width: 130px;
+	border-radius: 20px;
+	text-align: center;
+	margin-left: 20px;
+}
+.item > .image
+{
+	width: 10%;
+}
+
+
+

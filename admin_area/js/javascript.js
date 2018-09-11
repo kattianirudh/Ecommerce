@@ -1,0 +1,54 @@
+$('[data-id="2"]').click(function(){
+	
+	$("#tab-slide-2").addClass("active");
+	$("#tab-slide-1").removeClass("active");	
+	$('[data-id="2"]').addClass("active");
+	$('[data-id="1"]').removeClass("active");
+})
+
+$('[data-id="1"]').click(function(){
+	
+	$("#tab-slide-1").addClass("active");
+	$("#tab-slide-2").removeClass("active");	
+	$('[data-id="1"]').addClass("active");
+	$('[data-id="2"]').removeClass("active");
+})
+
+
+$('.minus-btn').on('click', function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    var $input = $this.closest('div').find('input');
+    var value = parseInt($input.val());
+ 
+    if (value> 1) {
+        value = value - 1;
+    } else {
+        value = 0;
+    }
+ 
+  $input.val(value);
+ 
+});
+ 
+$('.plus-btn').on('click', function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    var $input = $this.closest('div').find('input');
+    var value = parseInt($input.val());
+ 
+    if (value > 0) {
+        value = value + 1;
+    } else {
+        value =100;
+    }
+ 
+    $input.val(value);
+});
+
+$('.like-btn').on('click', function() {
+   $(this).toggleClass('is-active');
+});
+
+
+	
