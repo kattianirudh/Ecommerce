@@ -1,5 +1,9 @@
 <?php
 	session_start();
+	if(!isset($_SESSION['customer_email'])){
+		echo "<script>window.open('../checkout.php','_self')</script>";
+	}
+	else{
 	include("../includes/db.php");
 	include("../functions/functions.php");
 ?>
@@ -227,19 +231,10 @@
 			?>
 		</div>
 	</div>
-
-
-
 	</div>
-
-
-
-
-
-
-
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>	
 
 </body>
 </html>
+<?php } ?>

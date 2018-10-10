@@ -44,12 +44,13 @@
 					<a href="cart.php">Go to Cart</a>
 				</li>
 				<li>
-					<?php	if(!isset($_SESSION['customer_email'])){
-					echo '<a href="checkout.php">Login</a>';
-				}
-				else{
-					echo '<a href="customer/logout.php">Logout</a>';
-			}?>
+					<?php
+						if(!isset($_SESSION['customer_email'])){
+							echo '<a href="checkout.php">Login</a>';
+						} else {
+							echo '<a href="customer/logout.php">Logout</a>';
+						}
+					?>
 				</li>
 			</ul>
 		</div>
@@ -147,7 +148,11 @@
 			  <!-- Product #1 -->
 				  	<?php 
 			$ip_add = getRealUserIp();
-			$select_cart = "select * from cart where ip_add = '$ip_add'";
+			if(!isset($_SESSION['customer_email'])){
+				echo "<script>window.open('checkout.php','_self')</script>";
+			}
+			$cust_email = $_SESSION['customer_email'];
+			$select_cart = "select * from cart where customer_email = '$cust_email'";
 			$run_cart = mysqli_query($db,$select_cart);
 			$count =  mysqli_num_rows($run_cart);
 			while($cart_rows = mysqli_fetch_array($run_cart)){
@@ -249,8 +254,8 @@
 			  </div> -->
 			</div>
 		</div>
-			<span class="extras" >
-				<a href="shop.php" style="text-decoration: none;color: black;"><button class="continue-shopping hovers" style="margin-left: 6%;"><!-- &#8249; -->Continue shopping</button></a>
+			<span class="extras">
+				<a href="shop.php" style="text-decoration: none;color: black;"><button class="continue-shopping hovers" style="margin-left: 6%;"background: #2cd2b1; color: #fff; text-align: center; padding-top: 10px; padding-bottom: 10px; border-radius: 5px; box-shadow: 0px 10px 25px 1px rgba(0,0,0,0.1)"><!-- &#8249; -->Continue shopping</button></a>
 				<button class="update hovers" type="submit" name="update">Update</button>
 			</span>
 			</div>
@@ -306,7 +311,7 @@
 				</div>
 			</div>
 			<span class="extras" >
-				<a href="checkout.php" style="text-decoration: none;color: black;float: right;"><button class="continue-shopping hovers" style="margin-top:16%;">Checkout</button></a>
+				<a href="payment.php" style="text-decoration: none;color: black;float: right;"><button class="continue-shopping hovers" style="margin-top:16%;background: #2cd2b1; color: #fff; text-align: center; padding-top: 10px; padding-bottom: 10px; border-radius: 5px; box-shadow: 0px 10px 25px 1px rgba(0,0,0,0.1)">Checkout</button></a>
 			</span>
 		</div>
 	</div>	

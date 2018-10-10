@@ -86,7 +86,8 @@ color: #f7f7f7;
 /* Header Styles */
 
 .navbar {
-background:white;
+/* background:white; */
+box-shadow:0px 4px 12px 0px rgba(0,0,0,0.07);
 
 }
 
@@ -390,6 +391,27 @@ width:100%;
 .item > .image
 {
 	width: 10%;
+}
+
+@media (max-width: 1000px) {
+.sizing{
+	
+	margin-left: 10%;
+}	
+.card{
+	width: 100%!important;
+}
+.row-sizing{
+	max-width: 100%!important;
+}
+.row{
+	max-width: 100%!important;
+}
+.box{
+	margin: auto;
+	margin-top: 20%;
+	max-width: 60%;
+}
 }
 
 

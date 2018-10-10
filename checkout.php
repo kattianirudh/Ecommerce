@@ -58,7 +58,7 @@
 	</div><!--top ends-->
 	</div><!--container ends-->
 
-	<div class="navbar navbar-default" id="navbar"><!-- navbar navbar-default Starts -->
+	<div class="navbar navbar-default" id="navbar" style="margin-bottom: 0px;"><!-- navbar navbar-default Starts -->
 		<div class="container" ><!-- container Starts -->
 
 			<div class="navbar-header"><!-- navbar-header Starts -->
@@ -93,9 +93,9 @@
 							<a href="shop.php">Shop</a>
 						</li>
 						<li>
-							<a href="customer/my_account.php">My Account</a>
+							<a href="customer/my_account.php?my_orders">My Account</a>
 						</li>
-						<li class="active">
+						<li >
 							<a href="cart.php">Shopping Cart</a>
 						</li>
 						<li>

@@ -168,7 +168,7 @@
 										$_SESSION['pro_id']=$product_id; 
 										echo '
 
-										<div class="col-md-4 col-sm-6 center-responsive">
+										<div class="col-md-4 col-sm-6 center-responsive sizing">
 											<div class="product">
 												<div class="card" style="width: 220px">
 													<img class="card-img-top" src="admin_area/product_images/'.$product_img1.'" alt="Card image cap" style="width: 100%;">

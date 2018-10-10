@@ -7,6 +7,9 @@ body
 	/* background-color: #f0f0f0; */
 	overflow-x: hidden;
 }
+.navbar-container{
+	background-color: #f8f9fa!important;
+}
 #top
 {
 	background: #555555;
@@ -248,22 +251,22 @@ width:100%;
 	font-family: 'Roboto', sans-serif;
 	font-size: 9pt;
 	font-weight: 900;
-	min-width: 100%; */
+	/* min-width: 100%;  */
 	padding-top: 5px;
 	min-height: 30px; */
 	padding-left: 15px;
-	color: rgba(0,0,0,0.6);
-	background-color: #0098ff;
+	  /* color: rgba(0,0,0,0.6);  */
+		background-color: #0098ff; 
 	margin-top: 0.5em;
 	display: block;
 	height: 100%;
-	/* background: -moz-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 29%, rgba(5,193,255,1) 30%, rgba(5,193,255,1) 100%); ff3.6+
-	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(29%, rgba(255,255,255,1)), color-stop(30%, rgba(5,193,255,1)), color-stop(100%, rgba(5,193,255,1))); safari4+,chrome
-	background: -webkit-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 29%, rgba(5,193,255,1) 30%, rgba(5,193,255,1) 100%); safari5.1+,chrome10+
-	background: -o-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 29%, rgba(5,193,255,1) 30%, rgba(5,193,255,1) 100%); opera 11.10+
-	background: -ms-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 29%, rgba(5,193,255,1) 30%, rgba(5,193,255,1) 100%); ie10+
-	background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 29%, rgba(5,193,255,1) 30%, rgba(5,193,255,1) 100%); w3c
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#05C1FF', endColorstr='#FFFFFF',GradientType=1 ); ie6-9 */
+	background: -moz-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 29%, rgba(5,193,255,1) 30%, rgba(5,193,255,1) 100%)!important; /* ff3.6+ */
+background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(29%, rgba(255,255,255,1)), color-stop(30%, rgba(5,193,255,1)), color-stop(100%, rgba(5,193,255,1)))!important; /* safari4+,chrome */
+background: -webkit-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 29%, rgba(5,193,255,1) 30%, rgba(5,193,255,1) 100%)!important; /* safari5.1+,chrome10+ */
+background: -o-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 29%, rgba(5,193,255,1) 30%, rgba(5,193,255,1) 100%)!important; /* opera 11.10+ */
+background: -ms-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 29%, rgba(5,193,255,1) 30%, rgba(5,193,255,1) 100%)!important; /* ie10+ */
+background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 29%, rgba(5,193,255,1) 30%, rgba(5,193,255,1) 100%)!important; /* w3c */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#05C1FF', endColorstr='#FFFFFF',GradientType=1 ); /* ie6-9 */
 }
 
 .card-body{

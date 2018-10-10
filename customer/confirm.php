@@ -1,3 +1,16 @@
+
+<?php
+	session_start();
+	if(!isset($_SESSION['customer_email'])){
+		echo "<script>window.open('../checkout.php','_self')</script>";
+	}
+	else{
+	include("../includes/db.php");
+	include("../functions/functions.php");
+	if(isset($_GET['order_id'])){
+		$order_id = $_GET['order_id'];
+	}
+?> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -147,74 +160,55 @@
 	</div><!-- navbar navbar-default Ends -->
 
 	<div class="container">
-		
-
-	<div class="col-md-3">
-		<?php include("includes/sidebar.php");?>
-	</div>
-	<div class="col-md-9">
-		<div class="box">
-			<h1 align="center">Please confirm your payment</h1>
-			<form action="confirm.php" method="post" enctype="multipart/form-data">
-				<div class="form-group">
-					<label>Invoice No:</label>
-					<input type="text" class="form-control" name="invoice_no" required>
+		<div class="col-md-3">
+			<?php include("includes/sidebar.php");?>
+		</div>
+		<div class="col-md-9">
+			<div class="box">
+				<h1 align="center">Please confirm your payment</h1>
+				<form action="confirm.php?update_id=<?php echo $order_id; ?>" method="post" enctype="multipart/form-data">
+					<div class="form-group">
+						<label>Invoice No:</label>
+						<input type="text" class="form-control" name="invoice_no" required>
+					</div>
+					<div class="form-group">
+						<label>Amount sent:</label>
+						<input type="text" class="form-control" name="amount_sent" required>
+					</div>
+					<div class="form-group">
+						<label>Select Payment Mode:</label>
+						<select name="payment_mode" class="form-control">
+							<option>Select Payment Mode</option>
+							<option>Bank Code</option>
+							<option>UBL/Omni Paisa</option>
+							<option>Western union</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Transaction Refferal ID	</label>
+						<input type="text" class="form-control" name="ref_no" required>
+					</div>
+					<div class="form-group">
+						<label>Easy Paisa/Omni Code</label>
+						<input type="text" class="form-control" name="code" required>
+					</div>
+					<div class="form-group">
+						<label>Payment Date:</label>
+						<input type="text" class="form-control" name="date" required>
+					</div>
+				</form>
+				<div class="text-center">
+					<button class="btn btn-primary" type="submit" name="confirm_payment">
+						<i class="fa fa-user"></i> Confirm Payment
+					</button>
 				</div>
-				<div class="form-group">
-					<label>Amount sent:</label>
-					<input type="text" class="form-control" name="amount_sent" required>
-				</div>
-				<div class="form-group">
-					<label>Select Payment Mode:</label>
-					<select name="payment_mode" class="form-control">
-						<option>Select Payment Mode</option>
-						<option>Bank Code</option>
-						<option>UBL/Omni Paisa</option>
-						<option>Western union</option>
-					</select>
-				</div>
-				<div class="form-group">
-					<label>Transaction Refferal ID	</label>
-					<input type="text" class="form-control" name="ref_no" required>
-				</div>
-				<div class="form-group">
-					<label>Easy Paisa/Omni Code</label>
-					<input type="text" class="form-control" name="code" required>
-				</div>
-				<div class="form-group">
-					<label>Payment Date:</label>
-					<input type="text" class="form-control" name="date" required>
-				</div>
-			</form>
-			<div class="text-center">
-				<button class="btn btn-primary" type="submit" name="confirm_payment">
-					<i class="fa fa-user"></i> Confirm Payment
-				</button>
 			</div>
 		</div>
 	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>	
 
 </body>
 </html>
+<?php } ?>

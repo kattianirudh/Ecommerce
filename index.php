@@ -14,7 +14,7 @@
 </head>
 <body>
 <div id="top"><!--top starts-->	
-	<div class="container"><!--container starts-->
+	<div class="container navbar-container"><!--container starts-->
 		<div class="col-md-6 offer">
 			<a href="#" class="btn btn-success btn-sm">
 				<?php if(!isset($_SESSION['customer_email'])){

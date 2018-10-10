@@ -7,6 +7,33 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<style type="text/css">
+		body{
+			margin-top: 0px;
+		}
+		.register_container{
+			min-width: 100%;
+			min-height: 100vh;
+			padding-top: 140px;
+			background: -moz-linear-gradient(225deg, rgba(208,255,174,1) 0%, rgba(52,235,233,1) 100%); /* ff3.6+ */
+			background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(52,235,233,1)), color-stop(100%, rgba(208,255,174,1))); /* safari4+,chrome */
+			background: -webkit-linear-gradient(225deg, rgba(208,255,174,1) 0%, rgba(52,235,233,1) 100%); /* safari5.1+,chrome10+ */
+			background: -o-linear-gradient(225deg, rgba(208,255,174,1) 0%, rgba(52,235,233,1) 100%); /* opera 11.10+ */
+			background: -ms-linear-gradient(225deg, rgba(208,255,174,1) 0%, rgba(52,235,233,1) 100%); /* ie10+ */
+			background: linear-gradient(225deg, rgba(208,255,174,1) 0%, rgba(52,235,233,1) 100%); /* w3c */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0ffae', endColorstr='#34ebe9',GradientType=1 ); /* ie6-9 */
+		}
+
+		.register_card{
+			min-width: 400px;
+			max-width: 400px;
+			min-height: 450px;
+			
+			background-color: white;
+			border-radius: 4px;
+			box-shadow: 0px 10px 15px 2px rgba(0,0,0,0.2);
+		}
+	</style>
 	<title>E-Commerce Store	</title>
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=roboto:400,500,700,300,100">
 	<link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
@@ -57,7 +84,7 @@
 	</div><!--top ends-->
 	</div><!--container ends-->
 
-	<div class="navbar navbar-default" id="navbar"><!-- navbar navbar-default Starts -->
+	<div class="navbar navbar-default" id="navbar" style="margin-bottom: 0px;"><!-- navbar navbar-default Starts -->
 		<div class="container" ><!-- container Starts -->
 
 			<div class="navbar-header"><!-- navbar-header Starts -->
@@ -130,21 +157,11 @@
 			</div><!--Navbar collapse Ends-->
 		</div>
 	</div>
-
+<div class="register_container" style="padding-bottom: 10%;">
 <div id="content" ><!-- content Starts -->
 	<div class="container" ><!-- container Starts -->
-		<div class="col-md-12" ><!--- col-md-12 Starts -->
-			<ul class="breadcrumb" ><!-- breadcrumb Starts -->
-				<li>
-					<a href="index.php">Home</a>
-				</li>
-				<li>Register</li>
-			</ul><!-- breadcrumb Ends -->
-		</div><!--- col-md-12 Ends -->
-		<div class="col-md-3"><!-- col-md-3 Starts -->
-			<?php include("includes/sidebar.php"); ?>
-		</div><!-- col-md-3 Ends -->
-		<div class="col-md-9" ><!-- col-md-9 Starts -->
+	
+		<div class="col-md-12" ><!-- col-md-9 Starts -->
 			<div class="box" ><!-- box Starts -->
 				<div class="box-header" ><!-- box-header Starts -->
 					<center><!-- center Starts -->
@@ -152,43 +169,65 @@
 					</center><!-- center Ends -->
 				</div><!-- box-header Ends -->
 				<form action="customer_register.php" method="post" enctype="multipart/form-data" ><!-- form Starts -->
-					<div class="form-group" ><!-- form-group Starts -->
+					<!-- <div class="form-group" >form-group Starts
 						<label>Customer Name</label>
 						<input type="text" class="form-control" name="c_name" required>
-					</div><!-- form-group Ends -->
-					<div class="form-group"><!-- form-group Starts -->
+					</div>form-group Ends
+					<div class="form-group">form-group Starts
 						<label> Customer Email</label>
 						<input type="text" class="form-control" name="c_email" required>
-					</div><!-- form-group Ends -->
-					<div class="form-group"><!-- form-group Starts -->
+					</div>form-group Ends
+					<div class="form-group">form-group Starts
 						<label> Customer Password </label>
 						<input type="password" class="form-control" name="c_pass" required>
-					</div><!-- form-group Ends -->
-					<div class="form-group"><!-- form-group Starts -->
+					</div>form-group Ends
+					<div class="form-group">form-group Starts
 						<label> Customer Country </label>
 						<input type="text" class="form-control" name="c_country" required>
-					</div><!-- form-group Ends -->
-					<div class="form-group"><!-- form-group Starts -->
+					</div>form-group Ends
+					<div class="form-group">form-group Starts
 						<label> Customer City </label>
 						<input type="text" class="form-control" name="c_city" required>
-					</div><!-- form-group Ends -->
-					<div class="form-group"><!-- form-group Starts -->
+					</div>form-group Ends
+					<div class="form-group">form-group Starts
 						<label> Customer Contact </label>
 						<input type="text" class="form-control" name="c_contact" required>
-					</div><!-- form-group Ends -->
-					<div class="form-group"><!-- form-group Starts -->
+					</div>form-group Ends
+					<div class="form-group">form-group Starts
 						<label> Customer Address </label>
 						<input type="text" class="form-control" name="c_address" required>
-					</div><!-- form-group Ends -->
-					<div class="form-group"><!-- form-group Starts -->
+					</div>form-group Ends
+					<div class="form-group">form-group Starts
 						<label> Customer Image </label>
 						<input type="file" class="form-control" name="c_image" required>
-					</div><!-- form-group Ends -->
-					<div class="text-center"><!-- text-center Starts -->
+					</div>form-group Ends
+					<div class="text-center">text-center Starts
 						<button type="submit" name="register" class="btn btn-primary" style="width: 10%; background-color: #2e6da4; margin-bottom: 10%;" >
 							<i class="fa fa-user-md" ></i> Register
 						</button>
-					</div><!-- text-center Ends -->
+					</div>text-center Ends -->
+						
+	    	<center>
+	    		<div class="register_card">
+	    			<div style="font-size: 20pt; padding-top: 50px; color: rgba(0,0,0,0.6); padding-bottom: 20px"><i class="fa fa-lock" aria-hidden="true"></i> Register</div>
+
+	    			<div style="max-width: 320px">
+                        <input type="text" name="c_name" placeholder="Name" required class="form-control" style="border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; min-height: 50px; border-left-color: #f492ac; border-top-color: #f492ac; border-right-color: #f492ac">
+	    				<input type="text" name="c_email" placeholder="email" required class="form-control" style="border-radius: 0px ;min-height: 50px; border-left-color: #f492ac; border-right-color: #f492ac">
+                        <input type="password" name="c_pass" placeholder="Password" required class="form-control" style="border-radius: 0px ;min-height: 50px; border-left-color: #f492ac; border-right-color: #f492ac">
+                        <input type="text" name="c_country" placeholder="Customer Country" required class="form-control" style="border-radius: 0px ;min-height: 50px; border-left-color: #f492ac; border-right-color: #f492ac">
+	    				<input type="text" name="c_city" placeholder="Customer City" required class="form-control" style="border-top-left-radius: 0px; border-top-right-radius: 0px; min-height: 50px; border-left-color: #f492ac; border-right-color: #f492ac; border-bottom-color: #f492ac">
+	    				<input type="text" name="c_contact" placeholder="Customer Contact" required class="form-control" style="border-top-left-radius: 0px; border-top-right-radius: 0px; min-height: 50px; border-left-color: #f492ac; border-right-color: #f492ac; border-bottom-color: #f492ac">
+	    				<input type="input" name="c_address" placeholder="Customer Address" required class="form-control" style="border-top-left-radius: 0px; border-top-right-radius: 0px; min-height: 50px; border-left-color: #f492ac; border-right-color: #f492ac; border-bottom-color: #f492ac">
+	    				<input type="file" class="form-control" name="c_image" required placeholder="Customer City" required style="border-top-left-radius: 0px; border-top-right-radius: 0px; min-height: 50px; border-left-color: #f492ac; border-right-color: #f492ac; border-bottom-color: #f492ac">
+	    				<br>
+	    				<input type="submit" name="register" value="REGISTER"  style="min-height: 50px; background-color: #ef5585; color: #fff; border: 0px solid white; min-width: 320px; border-radius: 3px; font-size: 10pt; font-weight: 600">
+	    			<br><div style="font-size: 10pt;">Have an account? <a href="checkout.php" style="color: #8869a6">Login here</a></div>
+	    			</div><br>
+			
+	    		</div>
+	    	</center>
+    	</div>
 				</form><!-- form Ends -->
 			</div><!-- box Ends -->
 		</div><!-- col-md-9 Ends -->

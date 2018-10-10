@@ -258,7 +258,7 @@
 		                <div class="btn-and-quantity-wrap">
 		                  <div class="btn-and-quantity">
 		                  	<?php echo' <a href="index.php?pro_id='.$product_id.'">'; ?>
-			                    <button id="AddToCart" quickbeam="add-to-cart" type="submit">
+			                    <button id="AddToCart"  type="submit">
 			                      <span id="AddToCartText">Add to Cart</span>
 			                    </button>
 		                    </a>
@@ -267,7 +267,7 @@
 		                </div>
 		                
 		             </form>
-		              <!-- <?php add_cart(); ?> -->
+		              
 		              <div class="tabs">
 		                <div class="tab-labels">
 		                  <span data-id="1" class="active">Info</span>
@@ -298,7 +298,7 @@
 </html>
 
 
-<!-- Quickbeam cart end -->
+
 	
 				
 					

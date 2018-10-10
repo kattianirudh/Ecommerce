@@ -14,18 +14,24 @@ function getRealUserIp(){
 
 function items(){
 	global $db;
+	if(isset($_SESSION['customer_email'])){
+	$cust_email = $_SESSION['customer_email'];
 	$ip_add = getRealUserIp();
-	$get_items ="select * from cart where ip_add='$ip_add'";
+	$get_items ="select * from cart where customer_email='$cust_email'";
 	$run_item = mysqli_query($db,$get_items);
 	$count_items = mysqli_num_rows($run_item);
 	echo $count_items;
 }
+else echo '0';
+}
 
 function total_price(){
 	global $db;
-	$ip_add = getRealUserIp();
 	$total = 0;
-	$select_cart = "select * from cart where ip_add = '$ip_add'";
+	if(isset($_SESSION['customer_email'])){
+	$cust_email = $_SESSION['customer_email'];
+	$ip_add = getRealUserIp();
+	$select_cart = "select * from cart where customer_email = '$cust_email'";
 	$run_cart = mysqli_query($db,$select_cart);
 	while ($record  =mysqli_fetch_array($run_cart)) {
 	    $pro_id = $record['p_id'];
@@ -37,31 +43,35 @@ function total_price(){
 	    	$total = $total + $sub_total;
 	        
 	    }
-	}
+	}}
 	echo "₹ ".$total;
 }
 /* FUNCTION FOR ADD TO CART */
 function add_cart(){
 	 global $db;
-	 if(isset($_GET['add_cart'])){
-	$ip_add = getRealUserIp(); 
-	$p_id = $_GET['add_cart'];
-	$product_size = $_POST['option-0'];
-	$product_color = $_POST['option-1'];
-	$product_quantity = $_POST['quantity'];
-	$check_product = "select * from cart where ip_add = '$ip_add' AND p_id = '$p_id'";
-	$run_check = mysqli_query($db,$check_product);
-	if(mysqli_fetch_array($run_check)>0)
-	{
-		echo "<script>alert('This product is aldready in the cart , if you want more of the same increase the quantity in the cart.')</script>";
-		echo "<script>window.open('details.php?pro_id=$p_id','_self')</script>";
-	}
-	else
-	{
-		$query = "insert into cart(p_id,ip_add,qty,size,color) values ('$p_id','$ip_add','$product_quantity','$product_size','$product_color')";
-		$run_query = mysqli_query($db,$query);
-		echo "<script>alert('Added to cart.')</script>";
-		echo "<script>window.open('details.php?pro_id=$p_id','_self')</script>";
+
+ if(isset($_SESSION['customer_email'])){	
+ $cust_email = $_SESSION['customer_email']; 
+	if(isset($_GET['add_cart'])){
+		$ip_add = getRealUserIp(); 
+		$p_id = $_GET['add_cart'];
+		$product_size = $_POST['option-0'];
+		$product_color = $_POST['option-1'];
+		$product_quantity = $_POST['quantity'];
+		$check_product = "select * from cart where ip_add = '$ip_add' AND p_id = '$p_id'";
+		$run_check = mysqli_query($db,$check_product);
+		if(mysqli_fetch_array($run_check)>0)
+		{
+			echo "<script>alert('This product is aldready in the cart , if you want more of the same increase the quantity in the cart.')</script>";
+			echo "<script>window.open('details.php?pro_id=$p_id','_self')</script>";
+		}
+		else
+		{
+			$query = "insert into cart(p_id,customer_email,ip_add,qty,size,color) values ('$p_id','$cust_email','$ip_add','$product_quantity','$product_size','$product_color')";
+			$run_query = mysqli_query($db,$query);
+			echo "<script>alert('Added to cart.')</script>";
+			echo "<script>window.open('details.php?pro_id=$p_id','_self')</script>";
+		}
 	}
 }
 
