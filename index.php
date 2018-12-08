@@ -6,17 +6,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>E-Commerce Store	</title>
+	<title>Pandora	</title>
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=roboto:400,500,700,300,100">
 	<link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
 	<link rel="stylesheet"  type="text/css" href="font-awesome/css/font-awesome.min.css ">
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<!-- <link rel=icon href=images/Infinity.png.svg sizes="16x16" type="image/svg+xml"> -->
+	<link rel="shortcut icon" href="images/Infinity.png">
 </head>
 <body>
 <div id="top"><!--top starts-->	
-	<div class="container navbar-container"><!--container starts-->
+	<div class="container"><!--container starts-->
 		<div class="col-md-6 offer">
-			<a href="#" class="btn btn-success btn-sm">
+			<a href="customer/my_account.php?my_orders" class="btn btn-success btn-sm">
 				<?php if(!isset($_SESSION['customer_email'])){
 					echo 'Welcome : Guest';
 				} 
@@ -25,27 +27,29 @@
 				}
 				?>
 			</a>
-			<a href="#">
-				Shopping Cart total Price: <?php total_price(); ?>, Items: <?php items(); ?>
+			<a href="cart.php">
+				Shopping Cart total Price: <?php total_price(); ?> , Items: <?php items(); ?>
 			</a>
 		</div>
 		<div class="col-md-6">
 			<ul class="menu">
-				<li>
-					<a href="customer_register.php">Register</a>
+				<li class="damn">
+				
+				<a href="customer_register.php">Register</a>
+				
 				</li>
 				<li>
-					<a href="customer/checkout.php">My Account</a>
+					<a href="checkout.php">My Account</a>
 				</li>
 				<li>
 					<a href="cart.php">Go to Cart</a>
 				</li>
 				<li>
-				<?php	if(!isset($_SESSION['customer_email'])){
+					<?php	if(!isset($_SESSION['customer_email'])){
 					echo '<a href="checkout.php">Login</a>';
 				}
 				else{
-					echo '<a href="customer/logout.php">Logout</a>';
+					echo '<a href="logout.php">Logout</a>';
 			}?>
 				</li>
 			</ul>
@@ -61,8 +65,8 @@
 
 				<a class="navbar-brand home" href="index.php" ><!--- navbar navbar-brand home Starts -->
 
-					<img src="images/logo.png" alt="echo logo" class="hidden-xs" >
-					<img src="images/logo-small.png" alt="echo logo" class="visible-xs" >
+					<img src="images/Pandora.svg" alt="echo logo" class="hidden-xs" style="width: 65%;">
+					<!-- <img src="img/Globe.svg" alt="echo logo" type="image/x-icon" class="visible-xs" > -->
 
 				</a><!--- navbar navbar-brand home Ends -->
 
@@ -85,39 +89,35 @@
 						<li class="active">
 							<a href="index.php">Home</a>
 						</li>
-						<li>
+						<li \>
 							<a href="shop.php">Shop</a>
 						</li>
 						<li>
-							<?php
-
-						if(!isset($_SESSION['customer_email'])){
-							echo '<a href = "checkout.php">My Account</a>';
-						} 
-						else
-							{echo '<a href = "customer/my_account.php?my_orders">My Account</a>';}
-					 ?>
+							<a href="customer/my_account.php?my_orders">My Account</a>
 						</li>
 						<li>
 							<a href="cart.php">Shopping Cart</a>
 						</li>
 						<li>
-							<a href="Contact.php">Contact Us</a>
+							<a href="about.php">About Us</a>
 						</li>
 					</ul>
 
 				</div><!--Padding nav ends-->
-				<a href="cart.php" class="btn btn-primary navbar-btn right"><!--btn btn-primary navbar-btn right Starts-->
-					<i class="fa fa-shopping-cart">
-						<span><?php items(); ?> items</span>
+				<a href="cart.php" class="btn  navbar-btn right" style="margin-top:0px;"><!--btn btn-primary navbar-btn right Starts-->
+					<img src="images/bag.png" style="width: 40%;">
+						<span class="badge">
+					<i class="f">
+						<span style="font:-webkit-small-control;"><?php items(); ?> </span>
 					</i>
+					</span>
 				</a><!--btn btn-primary navbar-btn right Ends-->
-				<div class="navbar-collapse collapse right"><!-- navbar-collapse collapse right Starts -->
+				<!-- <div class="navbar-collapse collapse right">navbar-collapse collapse right Starts
 					<button class="btn navbar-btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#search">
 						<span class="sr-only">Toggle Search</span>
 						<i class="fa fa-search"></i>
 					</button>
-				</div><!--navbar-collapse collapse right ends-->
+				</div>navbar-collapse collapse right ends -->
 				<div class="collapse-clearfix collapse" id="search"><!--collapse-clearfix starts-->
 					<form action="result.php" method="get" class="navbar-form" ><!--navbar-form starts-->
 						<div class="input-group"><!--Input group Starts-->
@@ -154,7 +154,7 @@
 						</div>";
 					} ?>
 
-					<?php $get_slides = "select * from slider LIMIT 1,3";
+					<?php $get_slides = "select * from slider LIMIT 1,4";
 					$run_slides = mysqli_query($con,$get_slides);
 					while($row_slides=mysqli_fetch_array($run_slides)){
 						$slide_name=$row_slides['slide_name'];

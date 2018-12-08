@@ -1,4 +1,6 @@
-
+.zoom {
+  zoom: 90%;
+}
 
 .quick-cart-product .hide {
   opacity: 0; }

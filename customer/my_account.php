@@ -16,6 +16,7 @@
 	<link rel="stylesheet"  type="text/css" href="../font-awesome/css/font-awesome.min.css ">
 	<link rel="stylesheet" type="text/css" href="../styles/style.css">
 	<link rel="stylesheet" type="text/css" href="navbar.css">
+	<link rel="shortcut icon" href="images/Infinity.png">
 </head>
 <body>
 <div id="top"><!--top starts-->	
@@ -30,7 +31,7 @@
 				}
 				?>
 			</a>
-			<a href="#">
+			<a href="../cart.php">
 				Shopping Cart total Price: <?php total_price(); ?>, Items: <?php items(); ?>
 			</a>
 		</div>
@@ -43,7 +44,7 @@
 					<a href="checkout.php">My Account</a>
 				</li>
 				<li>
-					<a href="cart.php">Go to Cart</a>
+					<a href="../cart.php">Go to Cart</a>
 				</li>
 				<li>
 					<?php	if(!isset($_SESSION['customer_email'])){
@@ -66,8 +67,8 @@
 
 				<a class="navbar-brand home" href="../index.php" ><!--- navbar navbar-brand home Starts -->
 
-					<img src="images/logo.png" alt="echo logo" class="hidden-xs" >
-					<img src="images/logo-small.png" alt="echo logo" class="visible-xs" >
+					<img src="../images/Pandora.svg" alt="echo logo" class="hidden-xs" style="width: 65%;">
+					<img src="../images/Infinity.png" alt="echo logo" type="image/x-icon" class="visible-xs" >
 
 				</a><!--- navbar navbar-brand home Ends -->
 
@@ -168,21 +169,19 @@
 							<a href="../cart.php">Shopping Cart</a>
 						</li>
 						<li>
-							<a href="../Contact.php">Contact Us</a>
+							<a href="../about.php">About Us</a>
 						</li>
 					</ul>
 
 				</div><!--Padding nav ends-->
-				<a href="cart.php" class="btn btn-primary navbar-btn right"><!--btn btn-primary navbar-btn right Starts-->
-					<i class="fa fa-shopping-cart">
-						<span><?php items(); ?> items</span>
+				<a href="../cart.php" class="btn  navbar-btn right" style="margin-top:0px;"><!--btn btn-primary navbar-btn right Starts-->
+					<img src="../images/bag.png" style="width: 40%;">
+						<span class="badge">
+					<i class="f">
+						<span style="font:-webkit-small-control;"><?php items(); ?> </span>
 					</i>
-				</a><!--btn btn-primary navbar-btn right Ends-->
-				<div class="navbar-collapse collapse right"><!-- navbar-collapse collapse right Starts -->
-					<button class="btn navbar-btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#search">
-						<span class="sr-only">Toggle Search</span>
-						<i class="fa fa-search"></i>
-					</button>
+					</span>
+				</a>
 				</div><!--navbar-collapse collapse right ends-->
 				<div class="collapse-clearfix collapse" id="search"><!--collapse-clearfix starts-->
 					<form action="result.php" method="get" class="navbar-form" ><!--navbar-form starts-->
@@ -232,6 +231,8 @@
 		</div>
 	</div>
 	</div>
+
+	<?php include("includes/footer.php");?>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>	
 

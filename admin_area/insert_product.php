@@ -41,7 +41,7 @@
 										<option> Select  a Product Category </option>
 										<?php
 										$get_p_cats = "select * from product_categories";
-										$run_p_cats = mysqli_query($con,$get_p_cats);
+										$run_p_cats = mysqli_query($db,$get_p_cats);
 										while ($row_p_cats=mysqli_fetch_array($run_p_cats)) {
 											$p_cat_id = $row_p_cats['p_cat_id'];
 											$p_cat_title = $row_p_cats['p_cat_title'];
@@ -59,7 +59,7 @@
 										<option> Select a Category </option>
 										<?php
 										$get_cat = "select * from categories ";
-										$run_cat = mysqli_query($con,$get_cat);
+										$run_cat = mysqli_query($db,$get_cat);
 										while ($row_cat=mysqli_fetch_array($run_cat)) {
 											$cat_id = $row_cat['cat_id'];
 											$cat_title = $row_cat['cat_title'];
@@ -125,7 +125,6 @@
 	</html>
 
 <?php 
-
 	if(isset($_POST['submit'])){
 		$product_title =  $_POST['product_title'];
 		$product_cat =  $_POST['product_cat'];
@@ -142,8 +141,11 @@
 		move_uploaded_file($temp_name1,"product_images/$product_img1");
 		/*move_uploaded_file($temp_name1,"product_images/$product_img2");
 		move_uploaded_file($temp_name1,"product_images/$product_img3");*/
+		$db = mysqli_connect("localhost","root","","ecom_store");
 		$insert_product = "insert into products (p_cat_id,cat_id,date,product_title,product_img1,product_price,product_desc,products_keywords) values ('$product_cat','$cat',NOW(),'$product_title','$product_img1','$product_price','$product_desc','$product_keywords')";
-		$run_product = mysqli_query($con,$insert_product);
+		$run_product = mysqli_query($db,$insert_product);
+		var_dump($insert_product);
+		sleep(10);
 		if($run_product)
 		{
 			echo"<script> alert('Product has been successsfully been inserted') </script>";

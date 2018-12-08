@@ -253,6 +253,13 @@ if(isset($_POST['register']))
 	$c_image_tmp = $_FILES['c_image']['tmp_name'];
 	$c_ip = getRealUserIp(); 
 	move_uploaded_file($c_image_tmp,"customer/customer_images/$c_image");
+	$check = "select * from customes where customer_email = '$c_email'";
+	$run_check = mysqli_query($db,$check);
+	var_dump($run_check);
+	if(mysqli_num_rows($run_check)>0){
+		echo "<script>alert('Account aldready exists')</script>";
+	}
+	else{
 
 	$insert_customer ="insert into customers(customer_name,customer_email,customer_pass,customer_country,customer_city,customer_contact,customer_address,customer_image,customer_ip) values ('$c_name','$c_email','$c_pass','$c_country','$c_city','$c_contact','$c_address','$c_image','$c_ip')";
 	$run_customer = mysqli_query($db,$insert_customer);
@@ -260,7 +267,7 @@ if(isset($_POST['register']))
 	// var_dump($db); 
 	var_dump($run_customer);
 	die('gg');*/
-	echo"<script>alert('".$c_name."')</script>";
+	/*echo"<script>alert('".$c_name."')</script>";*/
 	$sel_cart = "select * from cart where ip_add='$c_ip'";
 	$run_cart = mysqli_query($db,$sel_cart);
 	$check_cart = mysqli_num_rows($run_cart);
@@ -276,6 +283,7 @@ if(isset($_POST['register']))
 		$_SESSION['c_name']=$c_email;
 		echo "<script>alert('You have been Registered Successfully')</script>";
 		echo "<script>window.open('index.php','_self')</script>";
+	}
 	}
 }
 

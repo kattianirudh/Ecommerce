@@ -8,14 +8,14 @@
 	<table class="table table-bordered table-hover">
 		<thead>
 			<tr>
-				<th>O N:</th>
+				<th>Order No:</th>
 				<th>Due Amount</th>
 				<th>Invoice Number</th>
 				<th>Qty</th>
 				<th>Size</th>
 				<th>Order Date:</th>
 				<th>Paid/Unpaid</th>
-				<th>Status:</th>
+				<!-- <th>Status:</th> -->
 			</tr>
 		</thead>
 		<tbody>	
@@ -51,9 +51,9 @@
 						<td><?php echo $size; ?></td>
 						<td><?php echo $order_date; ?></td>
 						<td><?php echo $order_status; ?></td>
-						<td>
+						<!-- <td>
 							<a href="confirm.php?order_id=<?php echo $order_id; ?>" target="blank" class="btn btn-primary btn-sm" > Confirm If Paid </a>
-						</td>
+						</td> -->
 					</tr><!-- tr Ends -->
 			<?php } ?>
 			

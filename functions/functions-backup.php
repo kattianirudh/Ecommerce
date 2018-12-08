@@ -58,7 +58,7 @@ function add_cart(){
 		$product_size = $_POST['option-0'];
 		$product_color = $_POST['option-1'];
 		$product_quantity = $_POST['quantity'];
-		$check_product = "select * from cart where customer_email = '$customer_email' AND p_id = '$p_id'";
+		$check_product = "select * from cart where ip_add = '$ip_add' AND p_id = '$p_id'";
 		$run_check = mysqli_query($db,$check_product);
 		if(mysqli_fetch_array($run_check)>0)
 		{

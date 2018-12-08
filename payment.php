@@ -35,7 +35,7 @@
 
           <div class="radio-input">
             <div id="card"  name="payment">
-            Pay £340.00 with credit card</div>
+            Pay with credit card</div>
           </div>
         </label>
 
@@ -43,31 +43,31 @@
           <img src="img/paypal_logo.png"/>
           <div class="radio-input">
             <div id="paypal"  name="payment">
-            Pay £340.00 with PayPal</div>
+            Pay with PayPal</div>
           </div>
         </label>
       </div>
       <div class="input-fields">
         <div class="column-1">
-          <label for="cardholder">Cardholder's Email</label>
-          <input type="text" id="cardholder" name="cardholder" />
+          <label for="cardholder" pattern="/^[A-Z]+$/i">Cardholder's Name</label>
+          <input type="text" id="cardholder" name="cardholder" required" />
 
           <div class="small-inputs">
             <div>
               <label for="date">Valid thru</label>
-              <input type="text" id="date" placeholder="MM / YY" name="date" />
+              <input type="text" id="date" placeholder="MM / YY" name="date" pattern="^(0[1-9]{1}|1[0-2]{1})/\d{2}$" title="MM/YY" />
             </div>
 
             <div>
               <label for="verification">CVV / CVC *</label>
-              <input type="password" id="verification" name="verification" />
+              <input type="password" id="verification" name="verification" pattern="[1-9][0-9][0-9]" title="3 digit CVV number with first no. non zero" required/>
             </div>
           </div>
 
         </div>
         <div class="column-2">
           <label for="cardnumber">Card Number</label>
-          <input type="password" id="cardnumber" name="cardnumber" />
+          <input type="password" id="cardnumber" name="cardnumber" pattern="^(\d{4}[- ]){3}\d{4}|\d{16}$" title="16 digit number" />
     
           <span class="info">* CVV or CVC is the card security code, unique three digits number on the back of your card separate from its number.</span>
         </div>
@@ -94,11 +94,11 @@ if(isset($_GET['verification'])){
     $ver = $_GET['verification'];
     $cardnumber = $_GET['cardnumber'];
     $cardholder = $_GET['cardholder'];
-    if((strlen((string)$ver))!=3){
+   /* if((strlen((string)$ver))!=3){
       echo "<script>alert('Your CVV is incorrect.') </script>";
       echo "<script>window.open('payment.php','_self')</script>";
     }
-    else{
+    else{*/
          $customer_email = $_SESSION['customer_email'];
         $query1 = "select * from customers where customer_email = '$customer_email'";
          $execute1 = mysqli_query($db,$query1);
@@ -112,6 +112,6 @@ if(isset($_GET['verification'])){
 
       echo "<script>alert('Payment Accecpted your product shall soon be delivered.')</script>";
         echo "<script>window.open('customer/my_account.php?my_orders','_self')</script>";
-    }
+    /*}*/
 }
 ?>

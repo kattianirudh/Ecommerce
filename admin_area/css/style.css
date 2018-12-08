@@ -178,7 +178,18 @@ margin-right:5px;
 }
 
 
-
+#footer
+{
+	background: #e9ecef;
+}
+.row a
+{
+	color:#696B79;
+}
+.footer-padding
+{
+	padding-top: 2%;
+}
 
 
 

@@ -263,7 +263,7 @@
 			                    </button>
 		                    </a>
 		                  </div>
-		                   <input type="number" name="quantity" value="1" class="quantity">
+		                   <input type="number" name="quantity" value="1" class="quantity" min="1" required>
 		                </div>
 		                
 		             </form>
