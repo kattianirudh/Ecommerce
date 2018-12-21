@@ -54,21 +54,7 @@ INSERT INTO `admin` (`admin_id`, `admin_name`, `admin_email`, `admin_pass`, `adm
 -- Table structure for table `cart`
 --
 
-CREATE TABLE `cart` (
-  `p_id` int(10) NOT NULL,
-  `customer_email` text NOT NULL,
-  `ip_add` varchar(255) NOT NULL,
-  `qty` int(10) NOT NULL,
-  `size` text NOT NULL,
-  `color` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`p_id`, `customer_email`, `ip_add`, `qty`, `size`, `color`) VALUES
-(4, 'katti', '::1', 5, 'M', 'Blue');
 
 -- --------------------------------------------------------
 
@@ -124,16 +110,7 @@ INSERT INTO `customers` (`customer_id`, `customer_name`, `customer_email`, `cust
 -- Table structure for table `customer_orders`
 --
 
-CREATE TABLE `customer_orders` (
-  `order_id` int(10) NOT NULL,
-  `customer_id` int(10) NOT NULL,
-  `due_amount` int(100) NOT NULL,
-  `invoice_no` int(100) NOT NULL,
-  `qty` int(10) NOT NULL,
-  `size` text NOT NULL,
-  `order_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `order_status` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 --
 -- Dumping data for table `customer_orders`
