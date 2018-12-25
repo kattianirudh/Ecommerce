@@ -9,4 +9,5 @@ Password : katti123
 Live Website preview:
 
 Front End : https://fafdgfsbccasae.000webhostapp.com/pandora/
+
 Admin Panel : https://fafdgfsbccasae.000webhostapp.com/pandora/admin_area/index.php?dashboard
